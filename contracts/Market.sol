@@ -52,6 +52,7 @@ contract Market is
         address from,
         address to
     );
+    event SetVaults(address marketVault, address projectVault, address ipVault);
     event SetWhiteList(address[] users, bool[] permissions);
     event SetCollection(address collection, bool permission);
     event SetCollectionFee(
@@ -444,5 +445,6 @@ contract Market is
         marketVault = marketVault_;
         projectVault = projectVault_;
         ipVault = ipVault_;
+        emit SetVaults(marketVault_, projectVault_, ipVault_);
     }
 }
